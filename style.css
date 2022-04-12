@@ -1,10 +1,4 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 .modal-container {
-  display: flex;
-  justify-content: center;
   margin: 2rem 0;
 }
 /* The Modal (background) */
@@ -23,25 +17,26 @@ body {
 }
 
 /* Modal Content */
-.modal-content {
+.modal-content-pelican {
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 30%;
+  width: 40%;
 }
 
 /* The Close Button */
 .close {
-  color: #aaaaaa;
+  color: #5e5e5e !important;
   float: right;
-  font-size: 28px;
+  font-size: 45px;
   font-weight: bold;
+  opacity: 1 !important;
 }
 
 .close:hover,
 .close:focus {
-  color: #000;
+  color: #000 !important;
   text-decoration: none;
   cursor: pointer;
 }
@@ -50,7 +45,7 @@ body {
   background: rgba(231, 105, 36, 0.9) !important;
   border-radius: 5px;
   font-size: 18px;
-  width: 200px !important;
+  width: fit-content;
   border: none;
   color: white;
   font-family: Raleway, sans-serif;
@@ -68,8 +63,12 @@ body {
   display: none !important;
 }
 
+label.bricks-form__label {
+	text-align: left;
+}
+
 @media (max-width: 780px) {
   .modal-content {
-    width: 80%;
+    width: 90%;
   }
 }
