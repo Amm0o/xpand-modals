@@ -26,42 +26,36 @@ setTimeout(() => {
 
   // Verificar se existe mais de 1
   for (let c = 0; c < btns.length; c++) {
-    btns[c].addEventListener(
-      'click',
-      e => {
-        if (parent.length > 1) {
-          for (let c = 0; c < parent.length; c++) {
-            let status = 0;
-            let tester = document.querySelectorAll(`[id="${parent[c].id}"]`);
+    btns[c].addEventListener('click', e => {
+      if (parent.length > 1) {
+        for (let c = 0; c < parent.length; c++) {
+          let status = 0;
+          let tester = document.querySelectorAll(`[id="${parent[c].id}"]`);
 
-            if (tester.length > 1) {
-              for (let i = 0; i < tester.length; i++) {
-                if (tester[0].id === tester[i].id) {
-                  if (status === 0) {
-                    status = 1;
-                  } else {
-                    tester[i].classList.add('hide-modal');
-                    tester[i].addEventListener('click', () => {
-                      document.getElementsByClassName(
-                        `modal-${tester[0].id}`
-                      )[0].style.display = 'block';
-                    });
-                  }
+          if (tester.length > 1) {
+            for (let i = 0; i < tester.length; i++) {
+              if (tester[0].id === tester[i].id) {
+                if (status === 0) {
+                  status = 1;
+                } else {
+                  tester[i].classList.add('hide-modal');
+                  tester[i].addEventListener('click', () => {
+                    document.getElementsByClassName(
+                      `modal-${tester[0].id}`
+                    )[0].style.display = 'block';
+                  });
                 }
               }
             }
-            status = 0;
           }
+          status = 0;
         }
+      }
 
-        setTimeout(() => {
-          // Abrir sempre o primeiro modal
-          document.getElementsByClassName(
-            `modal-${e.target.classList[2]}`
-          )[0].style.display = 'block';
-        });
-      },
-      2000
-    );
+      // Abrir sempre o primeiro modal
+      document.getElementsByClassName(
+        `modal-${e.target.classList[2]}`
+      )[0].style.display = 'block';
+    });
   }
 }, 1500);
